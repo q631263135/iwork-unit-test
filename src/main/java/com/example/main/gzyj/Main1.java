@@ -56,7 +56,7 @@ public class Main1 {
 
         String date;
         int step = -1;
-        String weekOf = "";
+        String weekOf = "L";
 
         String sendDate = "2019-12-10";
         Calendar calendar = Calendar.getInstance();
@@ -77,14 +77,14 @@ public class Main1 {
             date = new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime());
             date = DateUtil.getDateAdjustForward(date, holidayList);
             date = date.replace("-", "");
-
-            System.out.println(date);
         } else {
             int w = calendar.get(Calendar.WEEK_OF_MONTH);
             date = String.valueOf(w + step);
             String currentMonth = new SimpleDateFormat("yyyyMM").format(calendar.getTime());
             date = currentMonth + "-" + date;
         }
+
+        System.out.println(date);
 
     }
 }
